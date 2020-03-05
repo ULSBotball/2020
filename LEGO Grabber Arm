@@ -2,8 +2,7 @@
 
 int main()
 {
-    printf("Ethan the Dump Truck\n");
-enable_servos();
+    enable_servos();
     set_servo_position(0,1868);//vertical
     set_servo_position(1,1600);//horizontal
     msleep(1000);
