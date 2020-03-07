@@ -1,0 +1,22 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    enable_servos();
+    set_servo_position(0,1868);//vertical
+    set_servo_position(1,1600);//horizontal
+    msleep(1000);
+    motor(0, 300); //Right Motor (when facing servos from brain) - black up, red down
+    motor(1, -300); //Left Motor (when facing servos from brain) - black up, red down
+    msleep(3000);
+    ao();
+    motor(0, 300);
+    msleep(1100);
+    set_servo_position(1, 341);
+    msleep(1000);
+    ao();
+    set_servo_position(0, 597);
+   
+    ao();
+    return 0;
+}
