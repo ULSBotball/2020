@@ -1,0 +1,27 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    printf("Ethan the Dump Truck\n");
+	enable_servos();
+    set_servo_position(0,1868);//vertical
+    set_servo_position(1,1600);//horizontal
+    //sets arm to regular position
+    msleep(1000);
+    motor(0, 300); //Right Motor (when facing servos from brain) - black up, red down
+    motor(1, -300); //Left Motor (when facing servos from brain) - black up, red down
+    msleep(3000); 
+    //move forwards to the material transport
+    ao();
+    motor(0, 300);
+    msleep(1100);
+    set_servo_position(1, 341);
+    msleep(1000);
+    //turn to the left while moving the material transport then grab the material transport
+    ao();
+    set_servo_position(0, 597);
+    //pick up material transport and put it overhead the robot
+    
+    ao();
+    return 0;
+}
